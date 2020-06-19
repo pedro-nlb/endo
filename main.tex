@@ -1,4 +1,4 @@
-\documentclass[notheorems, hyperref={backref}]{beamer}
+\documentclass[notheorems, hyperref]{beamer}
 
 %% KEY LINES IN THIS TEX FILE %% (enter line number+gg to go)
 
@@ -6,9 +6,9 @@
 % LOCAL FONT DEFINITIONS -- need to come first
 %
 %\usepackage{mathpazo}
-\usepackage{libertine}
-\usepackage[libertine]{newtxmath}
-\usefonttheme[onlymath]{serif}
+%\usepackage{libertine}
+%\usepackage[libertine]{newtxmath}
+%\usefonttheme[onlymath]{serif}
 
 %
 % STANDARD PREAMBLE
@@ -71,6 +71,7 @@
 % Theorems, propositions, etc (dark green)
 \theoremstyle{darkgreentheorem}
 \newtheorem{thm}{Theorem}
+\newtheorem{reform}{Reformulation}
 \newtheorem{lm}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{cor}[thm]{Corollary}
@@ -121,20 +122,23 @@
 % MATH OPERATORS
 %
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Pic}{Pic}
 
 %
 % OTHER COMMANDS
 %
 \newcommand{\ot}{\otimes}
 \newcommand{\op}{\oplus}
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\M}{\mathcal{M}}
 
 %
 % TITLE PAGE INFORMATION
 %
-\title[Title]{Title}
-\author{Pedro Núñez}
+\title[Endomorphisms of abelian varieties]{Endomorphisms of abelian varieties}
+\author{Remarks on Section I.10 of Milne's \textit{Abelian Varieties}}
 \institute{University of Freiburg}
-\date{\today}
+\date{23th June 2020}
  
 %
 % LINKS AND PDF OPTIONS
@@ -154,19 +158,16 @@
   citecolor=linkred,
   urlcolor=linkred}
 \makeatother
-\usecolortheme{orchid}
+\usecolortheme{rose}
  
 \begin{document}
  
 \frame{\titlepage}
- 
+
 \begin{frame}
-\frametitle{Sample frame title}
-This is a text in the first frame. This is a text in the first frame. This is a text in the first frame.
-Here is a formula:
-\[ \chi(\F)=\sum_{i=1}^{\dim{X}}(-1)^{i}h^{i}(X,\F). \]
+    \frametitle{References}
+    \bibliographystyle{alpha}
+    \bibliography{main.bib}
 \end{frame}
- 
+
 \end{document}
-
-

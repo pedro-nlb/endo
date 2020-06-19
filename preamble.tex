@@ -16,6 +16,9 @@
 \usepackage{mathtools}
 % Loads the amsmath package (\usepackage{amsmath}: miscellaneous improvements such as the commands \DeclareMathOperator and \text). It fixes some quirks it has and adds some useful settings, symbols and environments. It improves the aesthetics as well.
 
+\usepackage{textcomp}
+% For the tilde in the references
+
 \usepackage{amssymb}
 % Extended symbol collection, e.g. \Cap and \Cup. More importantly: the \mathbb command! It loads the amsfonts package (\usepackage{amsfonts}: fraktur letters, bold Greek letters...), so we do not need to include it in the preamble anymore.
 
@@ -225,7 +228,6 @@ mark = at position 0.5 with
 \newcommand{\Set}{\mathbf{Set}} % Addition (Sets)
 \newcommand{\Sh}{\mathbf{Sh}} % Addition (Sheaves)
 \newcommand{\bfT}{\mathbf{T}}
-\renewcommand{\Top}{\mathbf{Top}} % Addition (Topological spaces)
 \newcommand{\bfU}{\mathbf{U}}
 \newcommand{\bfV}{\mathbf{V}}
 \renewcommand{\Vec}{\mathbf{Vec}} % Addition (Vector bundles)
