@@ -131,6 +131,7 @@
 \newcommand{\op}{\oplus}
 \renewcommand{\L}{\mathcal{L}}
 \renewcommand{\M}{\mathcal{M}}
+\newcommand{\dual}{^{\vee}}
 
 %
 % TITLE PAGE INFORMATION
@@ -163,6 +164,28 @@
 \begin{document}
  
 \frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Recall isogenies}
+    \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Definition]
+	\vspace{-6mm}
+	\begin{align*}
+	    \alpha\in \Hom(A,B) \text{ \textbf{isogeny} } & \text{\textcolor{blue}{$\Leftrightarrow$} surjective with finite kernel;} \\ 
+	    & \text{\textcolor{blue}{$\Leftrightarrow$} surjective and $\dim{A}=\dim{B}$;} \\
+	    & \text{\textcolor{blue}{$\Leftrightarrow$} finite kernel and $\dim{A}=\dim{B}$;} \\
+	    & \text{\textcolor{blue}{$\Leftrightarrow$} finite and surjective (and flat).}
+	\end{align*}
+    \end{tcolorbox}
+    \pause
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Examples]
+	\begin{itemize}
+	    \item $\L$ ample $\Rightarrow$ $\lambda_{\L}\colon A\to A\dual$ isogeny \cite[Prop.~8.1]{mil08}.
+	    \item $a\mapsto na$ isogeny, étale in char.~zero \cite[Thm.~7.2]{mil08}.
+	\end{itemize}
+    \end{tcolorbox}
+    \pause
+    Last example $\Rightarrow A_{n}:=\ker(a\mapsto na)$ is finite, and being isogenous is an equivalence relation \cite[Rem.~8.6]{mil08}.
+\end{frame}
 
 \begin{frame}
     \frametitle{References}
