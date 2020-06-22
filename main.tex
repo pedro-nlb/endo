@@ -122,6 +122,7 @@
 % MATH OPERATORS
 %
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Pic}{Pic}
 
 %
@@ -132,6 +133,8 @@
 \renewcommand{\L}{\mathcal{L}}
 \renewcommand{\M}{\mathcal{M}}
 \newcommand{\dual}{^{\vee}}
+\newcommand{\av}{\mathbf{AV}}
+\newcommand{\avi}{\mathbf{AV}^{0}}
 
 %
 % TITLE PAGE INFORMATION
@@ -180,11 +183,47 @@
     \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Examples]
 	\begin{itemize}
 	    \item $\L$ ample $\Rightarrow$ $\lambda_{\L}\colon A\to A\dual$ isogeny \cite[Prop.~8.1]{mil08}.
-	    \item $a\mapsto na$ isogeny, étale in char.~zero \cite[Thm.~7.2]{mil08}.
+	    \item $n>0\Rightarrow n_{A}\colon a\mapsto na$ isogeny \cite[Thm.~7.2]{mil08}.
 	\end{itemize}
     \end{tcolorbox}
     \pause
-    Last example $\Rightarrow A_{n}:=\ker(a\mapsto na)$ is finite, and being isogenous is an equivalence relation \cite[Rem.~8.6]{mil08}.
+    Last example $\Rightarrow n$-torsion subgroup $A_{n}:=\ker(a\mapsto na)$ is \textbf{finite}.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Abelian varieties up to isogeny}
+    \begin{itemize}
+	\item $\av(k)$: additive cat.~of abelian varieties and regular homomorphisms over a field $k$.
+	\item $\avi(k)$: $\Q$-linear cat.~with $\Hom^{0}(A,B):=\Hom(A,B)\ot_{\Z}\Q$.
+	\item $\alpha\in \Hom(A,B)$ isogeny $\Rightarrow B\cong A/\Ker(\alpha)$ and $\Ker(\alpha)\subseteq A_{n}$ for some $n\in \N$.
+	    Hence $\alpha$ becomes an isomorphism in $\avi(k)$:
+	    \begin{center}
+		\begin{tikzcd}[ampersand replacement=\&]
+		    A\arrow[swap]{dr}{\alpha}\arrow{rr}{n_{A}} \& \& A \\
+		    \& A/\Ker(\alpha)\arrow[dashed,swap]{ur}{\exists} \&
+		\end{tikzcd}
+	    \end{center}
+	\item $\alpha\in \Hom(A,B)$ isomorphism in $\Hom^{0}(A,B)\Rightarrow $ we can find such a factorization.
+	\item In fact $\av(k)\to \avi(k)$ localizes $\av(k)$ at all isogenies.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The category $\avi(k)$}
+    \begin{itemize}
+	\item It is \textbf{abelian} [\href{https://encyclopediaofmath.org/wiki/Isogeny}{encyclopediaofmath.org/wiki/Isogeny}].
+	\item Every object is \textbf{semisimple}: every $A$ is isogenous to a finite direct sum of indecomposable $A_{i}$'s \cite[Prop.~I.10.1]{mil08}.
+	    \begin{itemize}
+		\item Thus every short exact sequence in $\avi(k)$ splits [Jeremy Rickard's comment on \href{https://mathoverflow.net/a/327944/99436}{mathoverflow.net/a/327944/99436}].
+		\item Thus all additive functors are already exact and its derived category, which is equivalent to the category of cochain complexes with trivial differentials, is abelian \cite[III.2.4]{gm03}.
+	    \end{itemize}
+	\item All homs are finite dimensional over $\Q$ \cite[Thm.~I.10.15]{mil08}.
+    \end{itemize}
+
+
+    \begin{tcolorbox}[colback=yellow!5!white,colframe=orange!75!black]
+    Semisimple objects $\Rightarrow $ to understand $\avi(k)$, it suffices to study endomorphism algebras of simple objects \cite[p.~43]{mil08}.	
+    \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
