@@ -122,6 +122,7 @@
 % MATH OPERATORS
 %
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Pic}{Pic}
 
@@ -193,8 +194,10 @@
 \begin{frame}
     \frametitle{Abelian varieties up to isogeny}
     \begin{itemize}
-	\item $\av(k)$: additive cat.~of abelian varieties and regular homomorphisms over a field $k$.
+	\item $\av(k)$: additive cat.~of abelian varieties and homomorphisms.
+	    \pause
 	\item $\avi(k)$: $\Q$-linear cat.~with $\Hom^{0}(A,B):=\Hom(A,B)\ot_{\Z}\Q$.
+	    \pause
 	\item $\alpha\in \Hom(A,B)$ isogeny $\Rightarrow B\cong A/\Ker(\alpha)$ and $\Ker(\alpha)\subseteq A_{n}$ for some $n\in \N$.
 	    Hence $\alpha$ becomes an isomorphism in $\avi(k)$:
 	    \begin{center}
@@ -203,7 +206,11 @@
 		    \& A/\Ker(\alpha)\arrow[dashed,swap]{ur}{\exists} \&
 		\end{tikzcd}
 	    \end{center}
+	    \pause
 	\item $\alpha\in \Hom(A,B)$ isomorphism in $\Hom^{0}(A,B)\Rightarrow $ we can find such a factorization.
+	    \pause
+	\item Hence $\alpha$ is an isogeny $\Leftrightarrow$ $\alpha$ is an isomorphism in $\avi(k)$.
+	    \pause
 	\item In fact $\av(k)\to \avi(k)$ localizes $\av(k)$ at all isogenies.
     \end{itemize}
 \end{frame}
@@ -212,18 +219,77 @@
     \frametitle{The category $\avi(k)$}
     \begin{itemize}
 	\item It is \textbf{abelian} [\href{https://encyclopediaofmath.org/wiki/Isogeny}{encyclopediaofmath.org/wiki/Isogeny}].
+	    \pause
 	\item Every object is \textbf{semisimple}: every $A$ is isogenous to a finite direct sum of indecomposable $A_{i}$'s \cite[Prop.~I.10.1]{mil08}.
+	    \pause
 	    \begin{itemize}
 		\item Thus every short exact sequence in $\avi(k)$ splits [Jeremy Rickard's comment on \href{https://mathoverflow.net/a/327944/99436}{mathoverflow.net/a/327944/99436}].
+		    \pause
 		\item Thus all additive functors are already exact and its derived category, which is equivalent to the category of cochain complexes with trivial differentials, is abelian \cite[III.2.4]{gm03}.
 	    \end{itemize}
+	    \pause
 	\item All homs are finite dimensional over $\Q$ \cite[Thm.~I.10.15]{mil08}.
     \end{itemize}
-
-
+    \pause
     \begin{tcolorbox}[colback=yellow!5!white,colframe=orange!75!black]
     Semisimple objects $\Rightarrow $ to understand $\avi(k)$, it suffices to study endomorphism algebras of simple objects \cite[p.~43]{mil08}.	
     \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Idea in the complex case [$A_{i}=\C^{g_{i}}/\Lambda_{i}$]}
+    \begin{itemize}
+	\item $\Hom(A_{1},A_{2})\hookrightarrow \Hom(\Lambda_{1},\Lambda_{2})=\Hom(H_{1}(A_{1},\Z),H_{1}(A_{2},\Z))$, as we saw in \cite[\S I.2]{mil08}.
+	    Fixing bases for homology we get:
+	    \[ \Hom(A_{1},A_{2})\hookrightarrow M_{2g_{1}\times 2g_{2}}(\Z)\cong \Z^{\op 4g_{1}g_{2}}. \]
+	    \pause
+	\item Hence $\Hom(A_{1},A_{2})\cong \Z^{\op r}$ with $r\leqslant 4\dim(A_{1})\dim(A_{2})$.
+	    \pause
+	\item $\alpha\in \End(A_{1})$ defines a linear $H_{1}(\alpha)\in \End(H_{1}(A_{1},\Q))$ with characteristic polynomial
+	    \[ P_{\alpha}(t)=\det(H_{1}(\alpha)-t)=t^{2g}+a_{1}t^{2g-1}+\ldots +a_{2g} \in \Z[t]. \]
+	    \pause
+	\item We can then define $\operatorname{Tr}(\alpha)=-a_{1}$ and $\operatorname{Nm}(\alpha)=a_{2g}=\deg(\alpha)$ and use them to prove that, for $A$ simple of dimension $g$:
+	\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black]
+	    $[Z:\Q] \sqrt{[\End^{0}(A):Z]} \mid 2g$, where $Z:=Z(\End^{0}(A))$.	
+	\end{tcolorbox}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Extending previous ideas to arbitrary base fields [$\ell\neq p$]}
+    \begin{itemize}
+	\item Replace singular homology $H_{1}(A,\Q)$ by Tate module $T_{\ell}A$, which in this case is the étale homology $\varprojlim A_{\ell^{n}}\cong H^{1}(A,\Z_{\ell})^{\vee}$.
+	    \pause
+	\item \cite[Lemma I.10.6]{mil08}: $\Hom(A_{1},A_{2})$ torsion-free, because
+	    \[ \Hom(A_{1},A_{2})\hookrightarrow \Hom_{\Z_{\ell}}(T_{\ell}A_{1},T_{\ell}A_{2})\cong \Z_{\ell}^{\op 4g_{1}g_{2}}. \]
+	    \pause 
+	\item \cite[Thm.~I.10.9 and Prop.~I.10.20]{mil08}: $\alpha\in \End(A)$ gives $T_{\ell}(\alpha)\in \End_{\Q_{\ell}}(T_{\ell}A\ot_{\Z_{\ell}}\Q_{\ell})$ with characteristic polynomial $P_{\alpha}(t)=\det(T_{\ell}(\alpha)-t)\in \Z[t]$ and independent of $\ell\neq p$.
+	    \pause
+	\item \cite[Thm.~I.10.15]{mil08}: $\Hom(A_{1},A_{2})$ f.g.~over $\Z$ and
+	    \[ \Hom(A_{1},A_{2})\ot \Z_{\ell}\hookrightarrow \Hom_{\Z_{\ell}}(T_{\ell}A_{1},T_{\ell}A_{2}). \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Rosati involution and Albert classification}
+    Let $\L$ be an ample line bundle on $A$ and $\lambda_{\L}\colon A\to A\dual$ the corresponding isogeny.
+    Define the \textit{Rosati involution} on $\End^{0}(A)$ as
+    \[ \alpha\mapsto \alpha':=\lambda_{\L}^{-1}\circ \alpha\dual \circ \lambda_{\L}. \]
+    \pause
+    Then $\alpha\mapsto \operatorname{Tr}(\alpha'\alpha)$ is a positive definite quadratic form on $\End^{0}(A)$ \cite[Thm.~21.1]{mum70}.
+    \pause
+    This has several applications \cite[\S 21]{mum70}:
+    \begin{itemize}
+	\item Albert classification of $\End^{0}(A)$ for $A$ simple [Thm.~21.2].
+	\item (Weil's) Riemann hypothesis for abelian varieties [Thm.~21.4].
+	\item Structure of $\operatorname{NS}^{0}(A)$ [Thm.~21.6].
+    \end{itemize}
+    \pause
+    Mumford studies two cases of the Albert classification in more detail \cite[\S 22]{mum70}, namely:
+    \begin{itemize}
+	\item CM-abelian varieties over $\C$.
+	\item Elliptic curves in positive characteristic.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
